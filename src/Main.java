@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -12,6 +13,7 @@ public class Main {
             System.out.println("1. Задание №1");
             System.out.println("2. Задание №2");
             System.out.println("3. Задание №3");
+            System.out.println("4. Задание №4");
             System.out.println("0. Завершение программы");
 
             userChoice = InputChecker.readInt(scanner, "Выбeрите действие: "); // вводим до тех пор, пока не будет правильный ответ
@@ -104,6 +106,36 @@ public class Main {
 
                     break;
 
+                case 4:
+                    //Задача №1
+                    //int[] arr1 = {1, 2, 3, 4, 5};
+                    int[] arr1 = readArr(scanner);
+                    int numForSearch = InputChecker.readInt(scanner,"Введите целое число, которое нужно найти в массиве: ");
+                    System.out.println("Индекс первого вхождения числа: " + lab1.findFirst(arr1, numForSearch));
+
+                    //Задача №3
+                    //int[] arr2 = {1, 2, 3, 4, -5};
+                    int[] arr2 = readArr(scanner);
+                    System.out.println("Максимальное число по модулю в массиве: " + lab1.maxAbs(arr2));
+
+                    //Задача №5
+                    //int[] arr3 = {1, 2, 3, 4, 5};
+                    //int[] arr4 = {7, 8, 9};
+                    int[] arr3 = readArr(scanner);
+                    int[] arr4 = readArr(scanner);
+                    int pos = InputChecker.readInt(scanner, "Введите позицию для слияния массивов: ");
+                    System.out.println(Arrays.toString(lab1.add(arr3, arr4, pos)));
+
+                    //Задача №7
+                    int[] arr5 = readArr(scanner);
+                    System.out.println("Обратный массив: " + Arrays.toString(lab1.reverseBack(arr5)));
+
+                    //Задача №9
+                    int[] arr6 = readArr(scanner);
+                    int numSearch = InputChecker.readInt(scanner,"Введите целое число, которое нужно найти в массиве: ");
+                    System.out.println("Позиции данного числа: " + Arrays.toString(lab1.findAll(arr6, numSearch)));
+                    break;
+
                 case 0:
                     System.out.println("Пока");
                     break;
@@ -113,4 +145,21 @@ public class Main {
             }
         } while (userChoice != 0);
     }
+
+    private static int[] readArr(Scanner scanner){
+        System.out.print("Введите размер массива: ");
+        int size = scanner.nextInt(); // Считываем размер массива
+
+        // Создаем массив нужного размера
+        int[] array = new int[size];
+
+        System.out.println("Введите элементы массива:");
+        // Заполняем массив с клавиатуры
+        for (int i = 0; i < size; i++) {
+            array[i] = InputChecker.readInt(scanner, "Элемент " + i + ": "); // Считываем каждый элемент
+        }
+        System.out.println("Введенный массив: " + Arrays.toString(array));
+        return array;
+    }
 }
+

@@ -124,5 +124,63 @@ public class Lab1 {
     }
 
     // =========== Задание 4 ==========
+    //Задача №1: поиск числа в массиве
+    public int findFirst(int[] arr, int x) {
+        if (arr == null) return -1;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == x) return i;
+        }
+        return -1;
+    }
+
+    //Задача №3: поиск наибольшего числа в массиве по модулю
+    public int maxAbs(int[] arr) {
+        int maxAbsValue = Math.abs(arr[0]);
+        int indexMax = 0;
+        for (int i = 1; i < arr.length; i++) {
+            if (Math.abs(arr[i]) >= maxAbsValue) {
+                maxAbsValue = Math.abs(arr[i]);
+                indexMax = i;
+            }
+        }
+        return arr[indexMax];
+    }
+
+    //Задача №5: слияние массивов в определённой позиции
+    public int[] add(int[] arr, int[] ins, int pos) {
+        int[] resultArray = new int[arr.length + ins.length];
+        System.arraycopy(arr, 0, resultArray, 0, pos);  // из исходного массива с начальной его позиции в другой массив в такую его позицию в количестве стольки то штук
+        System.arraycopy(ins, 0, resultArray, pos, ins.length);
+        System.arraycopy(arr, pos, resultArray, pos + ins.length, arr.length - pos);
+        return resultArray;
+    }
+
+    //Задача №7: вывод перевёрнутого массива
+    public int[] reverseBack(int[] arr) {
+        int len = arr.length;
+        int[] resultArray = new int[len];
+        for (int i = 0; i < len; i++) {
+            resultArray[i] = arr[len - i - 1];
+        }
+        return resultArray;
+    }
+
+    //Задача №9: индексы всех вхождений числа в массив
+    public int[] findAll(int[] arr, int x) {
+        int count = 0;
+        for (int num : arr) {
+            if (num == x) count++;
+        }
+
+        int[] resultArray = new int[count];
+        int k = 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] == x) {
+                resultArray[k] = i;
+                k++;
+            }
+        }
+        return resultArray;
+    }
 }
 
