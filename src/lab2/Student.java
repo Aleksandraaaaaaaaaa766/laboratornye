@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class Student {
     private String name;
     private int[] grades;
+//    private double average;
 
     public int[] getGrades() {
         return grades;
@@ -13,6 +14,10 @@ public class Student {
     public String getName() {
         return name;
     }
+
+//    public double getAverage() {
+//        return average;
+//    }
 
     public void setGrades(int[] grades) {
         this.grades = grades;
@@ -30,7 +35,6 @@ public class Student {
         } else {
             setGrades(grades);
         }
-
     }
 
     /*public Student(String name) {
@@ -49,5 +53,21 @@ public class Student {
     @Override
     public String toString() {
         return this.name + ": " + Arrays.toString(grades);
+    }
+
+    public double getAverage() {
+        double avr = 0;
+        if (grades.length >= 1) {
+            for (int grade : grades) {
+                avr += grade;
+            }
+            return avr / grades.length;
+        } else {
+            return avr;
+        }
+    }
+
+    public boolean isTop() {
+        return grades.length >= 1 && getAverage() == 5;
     }
 }

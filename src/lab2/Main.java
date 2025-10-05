@@ -16,6 +16,7 @@ public class Main {
             System.out.println("2. Задание №2");
             System.out.println("3. Задание №3");
             System.out.println("4. Задание №4");
+            System.out.println("5. Задание №5");
             System.out.println("0. Завершение программы");
 
             userChoice = InputChecker.readInt(scanner, "Выбeрите действие: "); // вводим до тех пор, пока не будет правильный ответ
@@ -113,7 +114,7 @@ public class Main {
                     System.out.println("41. Создаём точку только по Х и Y");
                     Point p41 = new Point(3, 5);
                     Point p42 = new Point(25, 6);
-                    Point p43 = new Point(7,8);
+                    Point p43 = new Point(7, 8);
 
                     System.out.println(p41.toString());
                     System.out.println(p42.toString());
@@ -123,6 +124,24 @@ public class Main {
 
                     Student vasya1 = new Student("Вася", new int[]{3, 4, 5});
                     Student maksim = new Student("Максим");
+
+                    break;
+                case 5:
+                    Student vasya5 = new Student("Вася", new int[]{3, 4, 5, 4});
+                    System.out.println(vasya5.getAverage());
+                    System.out.println((vasya5.isTop()) ? "Вася отличник" : "Вася не отличник");
+
+                    Student petya5 = new Student("Петя", new int[]{5, 5, 5, 5});
+                    System.out.println(petya5.getAverage());
+                    System.out.println((petya5.isTop()) ? "Петя отличник" : "Петя не отличник");
+
+                    break;
+                case 0:
+                    System.out.println("Пока");
+                    break;
+
+                default:
+                    System.out.println("Введите правильную цифру!");
             }
         } while (userChoice != 0);
 
