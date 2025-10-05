@@ -1,3 +1,5 @@
+package lab1;
+
 public class Lab1 {
 
     // =========== Задание 1 ==========
@@ -40,16 +42,24 @@ public class Lab1 {
 
     //Задача №5: найти максимальное из 3 чисел
     public int max3(int x, int y, int z) {
-        int max = x;
-        if (y > max) max = y;
-        if (z > max) max = z;
-        return max;
+        int maxElem = x;
+        if (y > maxElem) {
+            maxElem = y;
+        };
+        if (z > maxElem) {
+            maxElem = z;
+        };
+        return maxElem;
     }
 
     //Задача №7: найти сумму чисел x и y, вывести 20 если сумма попадает в диапазон от 10 до 19
     public int sum2(int x, int y) {
         int sum = x + y;
-        return (sum >= 10 && sum <= 19) ? 20 : sum;
+        if (sum >= 10 && sum <= 19)
+            return 20;
+        else
+            return sum;
+
     }
 
     //Задача №9: вывести день недели из соответствующего числа
