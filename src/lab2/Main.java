@@ -124,15 +124,17 @@ public class Main {
 
                     Student vasya1 = new Student("Вася", new int[]{3, 4, 5});
                     Student maksim = new Student("Максим");
+                    System.out.println(vasya1.toString());
+                    System.out.println(maksim.toString());
 
                     break;
                 case 5:
                     Student vasya5 = new Student("Вася", new int[]{3, 4, 5, 4});
-                    System.out.println(vasya5.getAverage());
+                    System.out.println(vasya5.getName() + ": средняя оценка: " + vasya5.getAverage());
                     System.out.println((vasya5.isTop()) ? "Вася отличник" : "Вася не отличник");
 
                     Student petya5 = new Student("Петя", new int[]{5, 5, 5, 5});
-                    System.out.println(petya5.getAverage());
+                    System.out.println(petya5.getName() + ": средняя оценка: " + petya5.getAverage());
                     System.out.println((petya5.isTop()) ? "Петя отличник" : "Петя не отличник");
 
                     break;

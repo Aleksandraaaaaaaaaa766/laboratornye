@@ -20,6 +20,12 @@ public class Student {
 //    }
 
     public void setGrades(int[] grades) {
+
+        for (int grad : grades) {
+            if (grad < 2 || grad > 5) {
+                throw new IllegalArgumentException("Оценки должны быть от 2 до 5");
+            }
+        }
         this.grades = grades;
     }
 
@@ -27,12 +33,12 @@ public class Student {
         this.name = name;
     }
 
-    public Student(String name, int... grades) {
+    public Student(String name, int... grades) { //второй аргумент либо пустой, либо нет
         setName(name);
 
-        if (grades == null) {
+        if (grades == null) { // если пустой, создаём пустой массив
             this.grades = new int[0];
-        } else {
+        } else { //иначе вызываем сет
             setGrades(grades);
         }
     }
@@ -47,6 +53,7 @@ public class Student {
     }
 
     public Student(Student other) {
+        this.name = other.name;
         this.grades = other.grades;
     }*/
 

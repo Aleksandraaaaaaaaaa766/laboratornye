@@ -1,8 +1,8 @@
 package lab2;
 
 public class Line {
-    Point startPoint;
-    Point endPoint;
+    private Point startPoint;
+    private Point endPoint;
 
     public Point getStartPoint() {
         return startPoint;
