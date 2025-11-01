@@ -2,12 +2,11 @@ package lab3;
 
 import lab1.InputChecker;
 import lab2.Student;
+//import lab3.Figure.Point;
 import lab2.Point;
+import lab3.Figure.Point3D;
 import lab3.Figure.SummArea;
-import lab3.Figure.task4_4.Circle;
-import lab3.Figure.task4_4.Rectangle;
-import lab3.Figure.task4_4.Square;
-import lab3.Figure.task4_4.Triangle;
+import lab3.Figure.task4_4.*;
 
 import java.util.Scanner;
 
@@ -54,7 +53,7 @@ public class Main {
                     double x1 = InputChecker.readDouble(sc, "Введите координату х точки №1: ");
                     double y1 = InputChecker.readDouble(sc, "Введите координату y точки №1: ");
                     double z1 = InputChecker.readDouble(sc, "Введите координату z точки №1: ");
-                    Point p1 = new Point(x1, y1, z1);
+                    Point3D p1 = new Point3D(x1, y1, z1);
                     System.out.println(p1);
                     break;
 
@@ -97,7 +96,12 @@ public class Main {
                     Circle c2 = new Circle(new Point(1, 3), 8);
                     Square sq2 = new Square(new Point(1, 1), 4);
 
-                    System.out.println(SummArea.summ(c1, c2, sq1, sq2));
+                    System.out.println("Площадь 4 фигур: " + SummArea.summ(c1, c2, sq1, sq2));
+
+                    // создаём объектную переменную абстрактного класса
+                    Shape f;
+                    f = c1;
+                    System.out.println(f);
                     break;
 
 //                case 5:

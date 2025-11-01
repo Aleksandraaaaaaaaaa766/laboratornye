@@ -1,6 +1,6 @@
 package lab3.Figure;
 
-public class Point extends lab2.Point {
+public class Point3D extends lab2.Point {
     private double z;
 
     public double getZ() {
@@ -11,13 +11,13 @@ public class Point extends lab2.Point {
         this.z = z;
     }
 
-    public Point(double x, double y, double z) {
+    public Point3D(double x, double y, double z) {
         super(x, y);
         setZ(z);
     }
 
     @Override
     public String toString() {
-        return "{" + this.getX() + "; " + this.getY() + "; " + this.z+ "}";
+        return "{" + getX() + "; " + getY() + "; " + this.z+ "}";
     }
 }

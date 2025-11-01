@@ -35,14 +35,15 @@ public class Point {
         setY(y);
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true; //если оба объекта ссылаются на одно и то же
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Point point = (Point) obj;
-        return Double.compare(point.x, x) == 0 &&
-                Double.compare(point.y, y) == 0;
-    }
+//    @Override
+//    public boolean equals(Object obj) {
+//        if (this == obj) return true; //если оба объекта ссылаются на одно и то же
+//        if (obj == null || getClass() != obj.getClass()) return false;
+//        Point point = (Point) obj;
+//        return Double.compare(point.x, x) == 0 &&
+//                Double.compare(point.y, y) == 0;
+//    }
+
     @Override
     public String toString() {
         return "{" + this.x + ";" + this.y + "}";
